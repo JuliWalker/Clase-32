@@ -60,6 +60,17 @@ router.get('*', (req, res) => {
     res.send("esta ruta no es valida")
 });
 
+// hago otra ruta sin el repeat para probar artillery y hacer las pruebas de rendimiento.
+router.get('/artillery', (req, res) => {
+    try {
+        logger.info(`Un usuario ingreso a la ruta: ${req.url} con metodo GET`)
+        console.log(obj)
+        res.json(obj);
+    } catch (error) {
+        logger.error(error)
+    }
+});
+
 
 
 export default router;

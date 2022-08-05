@@ -1,0 +1,22 @@
+ARTILLERY - nos sirve para simular varias peticiones de varios usuarios y tambien nos genera un archivo con tiempos de repuestas.
+npm i -g artillery (para instalar artillery)
+o
+npm install -g artillery@latest (instalar la ultima version de artillery)
+como usar artillery por la terminal:
+artillery quick --count 500 --num 25 --output artilleryResult.txt http://localhost:8081/info/artillery
+donde --count es el numero de usuarios y --num es el numero de peticiones por usuario. El --output se usa para que tire los resultados en un archivo en vez de por consola.
+
+
+PROFILER DE NODE -- sirve para analizar los ticks que consume cada funcion de nuestro codigo.
+para levantar el servidor con el profiler de node:
+node --prof src/server.js
+Esto nos va a entregar un archivo .log que es dificil de leer --> Hay que pasarlo a un .txt para poder leerlo
+Para pasarlo al .txt renombramos el archivo que nos tira el profiler con un nombre sencillo por ejemplo "profilerNode-v8.log" y usamos el comando process
+node --prof-process profilerNode-v8.log > result_prof.txt
+
+
+PROFILER DE CHROME (INSPECT) -- sirve para ver el profiler directo en chrome y muestra el consumo de tiempo de operaciones directamente sobre el codigo.
+arrancamos el modo inspect en node:
+node --inspect src/server.js
+Y luego vamos al inspect de chrome:
+chrome://inspect   
